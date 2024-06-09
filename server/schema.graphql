@@ -1,0 +1,23 @@
+type Query {
+    jobs : [Job!]
+}
+
+# This is a regular comments which will be available is vs code only.
+# whatever we add in """ """ will be available in graphQl studio http://localhost:9000/graphql under schema tab
+ 
+type Company {
+    id: ID!
+    name: String!
+    description: String
+}
+
+
+ """ Represents a job ad posted our board"""
+type Job {
+    id: ID!
+    """The __date__ when the job was published. In ISO-8601 format E.g `2024-06-09` """
+    date: String!
+    title: String!
+    company: Company!
+    description: String
+}
